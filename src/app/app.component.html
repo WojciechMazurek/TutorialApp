@@ -1,9 +1,10 @@
+<app-usr-info></app-usr-info>
 <app-nav-bar> Loading... </app-nav-bar>
 <div class = "container-fluid d-flex">
     <div *ngFor="let item of products">
         <app-card imgDescription="galaxy" description={{item.description}} img={{item.img}} [price]='item.price'></app-card>
     </div>
 
-<app-card [price]=99.25 imgDescription="galaxy" description="Buy the Milky Way" img="https://www.nasa.gov/sites/default/files/thumbnails/image/main_image_deep_field_smacs0723-5mb.jpg"></app-card>
+<!-- <app-card [price]=99.25 imgDescription="galaxy" description="Buy the Milky Way" img="https://www.nasa.gov/sites/default/files/thumbnails/image/main_image_deep_field_smacs0723-5mb.jpg"></app-card> -->
 
 </div>

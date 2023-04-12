@@ -6,7 +6,13 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CardComponent } from './card/card.component';
 import { HttpClientModule} from '@angular/common/http';
-import { UsrInfoComponent } from './usr-info/usr-info.component'
+import { UsrInfoComponent } from './usr-info/usr-info.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+//import { environment } from '../environments/environment';
+import { provideDatabase,getDatabase } from '@angular/fire/database'
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
+import { AngularFireModule } from '@angular/fire/compat'; 
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -18,7 +24,10 @@ import { UsrInfoComponent } from './usr-info/usr-info.component'
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    HttpClientModule
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)), provideDatabase(() => getDatabase()),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

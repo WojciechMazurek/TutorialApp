@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "tutorial-db3ee"
+  },
+  "targets": {
+    "tutorial-db3ee": {
+      "hosting": {
+        "TutorialApp": [
+          "tutorial-db3ee"
+        ]
+      }
+    }
   }
 }

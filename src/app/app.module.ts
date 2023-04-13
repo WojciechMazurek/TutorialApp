@@ -13,6 +13,8 @@ import { provideDatabase,getDatabase } from '@angular/fire/database'
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
 import { AngularFireModule } from '@angular/fire/compat'; 
 import { environment } from 'src/environments/environment';
+import { AddCompComponent } from './add-comp/add-comp.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { environment } from 'src/environments/environment';
     NavBarComponent,
     CardComponent,
     UsrInfoComponent,
+    AddCompComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     HttpClientModule,
+    FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)), provideDatabase(() => getDatabase()),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
